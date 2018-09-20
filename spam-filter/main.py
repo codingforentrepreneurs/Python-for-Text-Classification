@@ -18,7 +18,16 @@ txt2_bow = [0, 1, 3]
 txt3_bow = [4, 5, 6, 7]
 
 
+# one hot array
 
+# txt_oha = [True, True, True, False, False, False, False, False]
+
+# this based on if that position has a value in that string
+txt_oha = [1, 1, 1, 0, 0, 0, 0, 0]
+
+tx2_oha = [1, 1, 0, 1, 0, 0, 0, 0]
+
+tx3_oha = [0, 0, 0, 0, 1, 1, 1, 1]
 
 
 
