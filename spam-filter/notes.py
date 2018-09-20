@@ -31,3 +31,22 @@ def to_one_hot(text):
         i+=1
     return oha
 
+
+
+
+def to_text(oha_array):
+    current_bow = make_bag()
+    sent = ''
+    i = 0
+    for pos in oha_array:
+        if pos == 1:
+            sent += " " + current_bow[i]
+        i += 1
+    return sent.strip()
+
+
+
+
+
+
+
