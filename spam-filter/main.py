@@ -1,4 +1,4 @@
-from preprocessing import make_bag
+from preprocessing import make_bag, to_one_hot
 
 
 
@@ -33,7 +33,7 @@ txt3_bow = [4, 5, 6, 7]
 # txt_oha = [True, True, True, False, False, False, False, False]
 
 # this based on if that position has a value in that string
-txt_oha = [1, 1, 1, 0, 0, 0, 0, 0]
+txt_oha = [1, 1, 1, 0, 0, 0, 0, 0] 
 
 tx2_oha = [1, 1, 0, 1, 0, 0, 0, 0]
 
