@@ -63,8 +63,8 @@ y = np.concatenate((y_pos, y_neg), axis=0)
 #X = Training data
 #y = labels = target = this actual value of that trainin data
 
-# print(X)
-#print(y)
+print(X)
+print(y)
 # print(len(X) == 14)
 # print(len(y) == len(X))
 
@@ -89,7 +89,6 @@ def predict(txt):
 
 print(predict("bad one")) # 0
 print(predict("great and good")) # 1 
-
 print(predict("that was just an incredible movie.")) # 
 
 
