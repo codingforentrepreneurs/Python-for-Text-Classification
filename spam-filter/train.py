@@ -78,18 +78,12 @@ X, y = shuffle(X, y, random_state=0)
 
 from sklearn import svm
 clf = svm.SVC()
-clf.fit(X, y)  
+clf.fit(X, y)
 
 #clf.predict([[2., 2.]])
+import pickle
 
-def predict(txt):
-    oha_txt             = to_one_hot(txt, add_to_bag=False)
-    prediction_array    = np.array(oha_txt)
-    return clf.predict([prediction_array]) # 1 or 0
-
-print(predict("bad one")) # 0
-print(predict("great and good")) # 1 
-print(predict("that was just an incredible movie.")) # 
+pickle.dump(clf, open('data/pickles/classifier.pkl', 'wb'))
 
 
 
