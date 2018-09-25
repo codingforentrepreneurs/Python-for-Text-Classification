@@ -84,6 +84,8 @@ clf.fit(X, y)
 import pickle
 
 pickle.dump(clf, open('data/pickles/classifier.pkl', 'wb'))
+pickle.dump(bag, open('data/pickles/bow.pkl', 'wb'))
+
 
 
 

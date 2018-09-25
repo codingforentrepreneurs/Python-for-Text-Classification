@@ -15,11 +15,14 @@ def make_bag(new_item=None):
             bow.append(final_item)
     return bow
 
-def to_one_hot(text, add_to_bag=True):
-    if add_to_bag:
-        current_bow = make_bag(text)
+def to_one_hot(text, add_to_bag=True, bow=None):
+    if bow is not None:
+        current_bow = bow
     else:
-        current_bow = make_bag(new_item=None)
+        if add_to_bag:
+            current_bow = make_bag(text)
+        else:
+            current_bow = make_bag(new_item=None)
     text_list = []
     if isinstance(text, list):
         text_list = new_item
