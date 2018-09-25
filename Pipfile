@@ -10,6 +10,7 @@ numpy = "*"
 scipy = "*"
 scikit-learn = "*"
 jupyter = "*"
+gitpython = "*"
 
 [requires]
 python_version = "3.6"
