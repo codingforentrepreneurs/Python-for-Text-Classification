@@ -88,3 +88,14 @@ pip install numpy scipy scikit-learn jupyter
 **16 - Pickles** *no code*
 
 **17 - Good Data In, Good Data Out** *no code*
+
+**18 - Dataset Resources** *no code* [Blog Post](https://www.codingforentrepreneurs.com/blog/dataset-resources-for-machine-learning/)
+
+[19 Grab and Parse Dataset](../../tree/f015b18d6a0212dabd94b4d62a7028a663103ab4/)
+
+[20 - Prepare Training Module for Spam + Not Spam](../../tree/a4f60d9679ad2cfd86b5b5ea719b1c99179bb6d4/)
+
+[21 - Train Spam Classifier with SVC](../../tree/5f61e3abf7c10eb98d74f987bd3a823598f7c328/)
+
+[22 - Clean and Predict](../../tree/82729e8825ee0e990c429b4592520ed4a9a9a92a/)
+
