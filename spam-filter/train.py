@@ -1,10 +1,18 @@
+import os
 from preprocessing import make_bag, to_one_hot, oha_to_text
 
 
 bag = []
 
+ROOT_DIR            = os.getcwd()
+SPAM_DATA_PATH      = os.path.join(ROOT_DIR, 'data', 'spam', 'spam.txt')
+NOT_SPAM_DATA_PATH  = os.path.join(ROOT_DIR, 'data', 'spam', 'not-spam.txt')
+SPAM_LABEL          = 0
+NOT_SPAM_LABEL      = 1
 
-def file_to_bow(filepath='data/simple/pos.txt'):
+
+
+def file_to_bow(filepath=NOT_SPAM_DATA_PATH):
     global bag
     with open(filepath, 'r') as f:
         lines = f.readlines()
@@ -13,8 +21,8 @@ def file_to_bow(filepath='data/simple/pos.txt'):
             bag = make_bag(escaped_line)
 
 
-file_to_bow(filepath='data/simple/pos.txt')
-file_to_bow(filepath='data/simple/neg.txt')
+file_to_bow(filepath=NOT_SPAM_DATA_PATH)
+file_to_bow(filepath=SPAM_DATA_PATH)
 
 
 
@@ -26,11 +34,9 @@ Negative = label = 0
 
 '''
 
-def file_to_oha(filepath='data/simple/pos.txt', label=1):
+def file_to_oha(filepath=NOT_SPAM_DATA_PATH, label=1):
     my_oha = []
     labels = []
-    if filepath.endswith("neg.txt"):
-        label = 0
     with open(filepath, 'r') as f:
         lines = f.readlines()
         for line in lines:
@@ -43,8 +49,8 @@ def file_to_oha(filepath='data/simple/pos.txt', label=1):
 
 
 
-pos_ohas, pos_labels = file_to_oha(filepath='data/simple/pos.txt')
-neg_ohas, neg_labels = file_to_oha(filepath='data/simple/neg.txt')
+pos_ohas, pos_labels = file_to_oha(filepath=NOT_SPAM_DATA_PATH, label=NOT_SPAM_LABEL)
+neg_ohas, neg_labels = file_to_oha(filepath=SPAM_DATA_PATH, label=SPAM_LABEL)
 
 
 #print(pos_ohas, pos_labels)
