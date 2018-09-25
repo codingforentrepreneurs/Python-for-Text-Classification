@@ -81,7 +81,7 @@ pip install numpy scipy scikit-learn jupyter
 
 [13 - Text Prediction Recap](../../tree/4877549c1fa212254e217670731c578bbc90cf3c/)
 
-[14 - Resuable Sklearn Classifier](../../tree/594451a60a6b5e1912456b33971da289f03012fc/)
+[14 - Reusable Sklearn Classifier](../../tree/594451a60a6b5e1912456b33971da289f03012fc/)
 
 [15 - Missing Bow](../../tree/30caa275489e2ffda564399ae69fc9f6bd760081/)
 
