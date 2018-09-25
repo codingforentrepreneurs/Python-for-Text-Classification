@@ -10,12 +10,12 @@ NOT_SPAM_DATA_PATH  = os.path.join(ROOT_DIR, 'data', 'spam', 'not-spam.txt')
 SPAM_LABEL          = 0
 NOT_SPAM_LABEL      = 1
 
-
+MAX_LINES = 500
 
 def file_to_bow(filepath=NOT_SPAM_DATA_PATH):
     global bag
     with open(filepath, 'r') as f:
-        lines = f.readlines()
+        lines = f.readlines()[:MAX_LINES]
         for line in lines:
             escaped_line = line.replace('\n', '')
             bag = make_bag(escaped_line)
@@ -38,7 +38,7 @@ def file_to_oha(filepath=NOT_SPAM_DATA_PATH, label=1):
     my_oha = []
     labels = []
     with open(filepath, 'r') as f:
-        lines = f.readlines()
+        lines = f.readlines()[:MAX_LINES]
         for line in lines:
             escaped_line = line.replace('\n', '')
             oha = to_one_hot(escaped_line)
