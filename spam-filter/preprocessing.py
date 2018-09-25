@@ -1,6 +1,7 @@
 
 bow = []
 
+
 def make_bag(new_item=None):
     global bow
     new_item_list = []
@@ -47,6 +48,37 @@ def oha_to_text(oha_array):
             sent += " " + current_bow[i]
         i += 1
     return sent.strip()
+
+
+def clean_line(line):
+    escaped = ""
+    for word in line.replace("\n", "").split():
+        word = word.replace(".", " ")
+        word = word.replace(",", " ")
+        word = word.replace("?", " ")
+        word = word.replace("!", " ")
+        word = word.replace(":", " ")
+        word = word.replace("'", " ")
+        word = word.replace("\"", " ")
+        word = word.replace(")", " ")
+        word = word.replace("(", " ")
+        word = word.replace("[", " ")
+        word = word.replace("]", " ")
+        word = word.replace(";", " ")
+        word = word.replace("&", " ")
+        word = word.replace("-", " ")
+        word = word.replace("*", " ")
+        word = word.replace("=", " ")
+        word = word.replace("/", " ")
+        word = word.replace("\\", " ")
+        word = word.replace("'s", " is")
+        word = word.replace("'m", " am")
+        word = word.replace("'ll", " will")
+        word = word.replace("n't", " not")
+        word = word.replace("@", "")
+        word = word.strip()
+        escaped += " " + word
+    return escaped.strip()
 
 
 

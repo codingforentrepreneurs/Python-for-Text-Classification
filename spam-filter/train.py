@@ -1,5 +1,5 @@
 import os
-from preprocessing import make_bag, to_one_hot, oha_to_text
+from preprocessing import make_bag, to_one_hot, oha_to_text, clean_line
 
 
 bag = []
@@ -17,7 +17,7 @@ def file_to_bow(filepath=NOT_SPAM_DATA_PATH):
     with open(filepath, 'r') as f:
         lines = f.readlines()[:MAX_LINES]
         for line in lines:
-            escaped_line = line.replace('\n', '')
+            escaped_line = clean_line(line)
             bag = make_bag(escaped_line)
 
 
@@ -40,7 +40,7 @@ def file_to_oha(filepath=NOT_SPAM_DATA_PATH, label=1):
     with open(filepath, 'r') as f:
         lines = f.readlines()[:MAX_LINES]
         for line in lines:
-            escaped_line = line.replace('\n', '')
+            escaped_line = clean_line(line)
             oha = to_one_hot(escaped_line)
             labels.append(label)
             my_oha.append(oha)
