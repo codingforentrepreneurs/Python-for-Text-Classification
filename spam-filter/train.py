@@ -69,8 +69,8 @@ y = np.concatenate((y_pos, y_neg), axis=0)
 #X = Training data
 #y = labels = target = this actual value of that trainin data
 
-print(X)
-print(y)
+# print(X)
+# print(y)
 # print(len(X) == 14)
 # print(len(y) == len(X))
 
