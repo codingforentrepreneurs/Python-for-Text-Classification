@@ -99,3 +99,6 @@ pip install numpy scipy scikit-learn jupyter
 
 [22 - Clean and Predict](../../tree/82729e8825ee0e990c429b4592520ed4a9a9a92a/)
 
+[23 - Scoring Classifer Accuracy](../../tree/b31dd954bc81065a57cc0888e9064efefc9e4aca/)
+
+[24 - One Hot Encoding Classifcation Recap](../../tree/bde58da9703bc012f55ba6773c7d2305552b7b20/)
