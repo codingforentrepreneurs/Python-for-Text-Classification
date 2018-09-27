@@ -52,6 +52,34 @@ y = to_categorical(encoded_Y)
 
 print(data, y)
 
+X = data # training data X[0] = y[0] # spam, X[1]  = y[1] # spam
+y = y # labels
+
+# from sklearn.model_selection import train_test_split
+
+# X_train, X_test, y_train, y_test = train_test_split(
+#     X, y, test_size=0.33, random_state=42)
+
+print(X.shape)
+indices = np.arange(X.shape[0])
+print(indices)
+np.random.shuffle(indices)
+print(indices)
+
+X = X[indices]
+y = y[indices]
+
+num_samples = 0.33 * X.shape[0]
+
+X_train = X[:-num_samples] # 67%
+X_test = X[-num_samples:] # 33%
+y_train = y[:-num_samples] # 67%
+y_test = y[-num_samples:] # 33%
+
+
+
+
+
 
 
 
