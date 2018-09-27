@@ -1,8 +1,12 @@
 import os
+import numpy as np
 from preprocessing import make_bag, to_one_hot, oha_to_text, clean_line
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.utils import to_categorical
+
+from sklearn.preprocessing import LabelEncoder
+
 
 bag = []
 
@@ -31,7 +35,6 @@ for line in not_spam_lines:
 for line in spam_lines:
     texts.append(line)
     labels.append('spam')
-
 
 spam_file.close()
 not_spam_file.close()
@@ -67,8 +70,18 @@ print(sequences)
 '''
 data = pad_sequences(sequences, maxlen=MAX_SEQUENCE_LENGTH)
 
-print(labels)
+#print(labels)
 #print(data)
+
+encoder = LabelEncoder()
+encoder.fit(labels)
+encoded_Y = encoder.transform(labels)
+
+y = to_categorical(encoded_Y)
+
+
+# class_prediction = encoder.inverse_transform([0, 1, 2])
+# print(class_prediction)
 
 
 
