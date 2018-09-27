@@ -11,6 +11,8 @@ scipy = "*"
 scikit-learn = "*"
 jupyter = "*"
 gitpython = "*"
+keras = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.6"
