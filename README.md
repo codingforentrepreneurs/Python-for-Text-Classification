@@ -102,3 +102,21 @@ pip install numpy scipy scikit-learn jupyter
 [23 - Scoring Classifier Accuracy](../../tree/b31dd954bc81065a57cc0888e9064efefc9e4aca/)
 
 [24 - One Hot Encoding Classification Recap](../../tree/bde58da9703bc012f55ba6773c7d2305552b7b20/)
+
+[25 - Preprocessing with a Keras Tokenizer](../../tree/e9f3f8b14ed44b66b44ed4286ac6404a87cca0b4/)
+
+[26 - Pad Sequences](../../tree/4b0a5c65440b25dc6951a47af37eacb58c3c41d3/)
+
+[27 - Convert Our Text Data into Sequences](../../tree/3134d46fce088fd2d191f6a26f81289ccc843819/)
+
+[28 - Labels and LabelEncoder](../../tree/eb2366fa035001517127a45ea55c1d54a8ad12aa/)
+
+[29 - Reusable Text-Label Utility](../../tree/445ee6b0d66f7d0ca7a9678764fa01d7a48a9ed0/)
+
+[30 - Split Training and Validation Data](../../tree/fadd0e491d3f3e30d07a6675e615de64398e9599/)
+
+[31 - Tokenized Text Classifier](../../tree/f3cef2b48254f2af56c78e4fd6b675fa879fb997/)
+
+[32 - Cross Validation](../../tree/4a1c0a6efde900e1211dccc98635004d79b28bc1/)
+
+[33 - Sensitivity vs Specificity](../../tree/0d6ec8d7a4df033ae6ed26bbe28c62e6e60599eb/)
