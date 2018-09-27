@@ -14,5 +14,5 @@ How to improve our training and prediction model after "23 - Scoring Classifier 
 
 ### Results
 One Hot Encoding with SVM   = 88.25%
-Vectors with SVM/Sklearn    = 
+Vectors with SVM/Sklearn    = 54.96% - 63.89%, 89.34%
 Vectors with Neural Network = 
