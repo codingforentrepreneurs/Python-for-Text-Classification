@@ -5,6 +5,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.utils import to_categorical
 from sklearn import svm
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import LabelEncoder
 
 
@@ -28,7 +29,7 @@ def split_textfiles(paths=[], limit=10000):
             lines = f.readlines()[:limit]
             for line in lines:
                 # clean line text
-                line = clean_line(line)
+                #line = clean_line(line)
                 texts.append(line)
                 labels.append(label)
     return texts, labels
@@ -37,7 +38,7 @@ def split_textfiles(paths=[], limit=10000):
 texts, labels = split_textfiles(paths=[
         SPAM_DATA_PATH,
         NOT_SPAM_DATA_PATH,
-], limit=100000)
+], limit=747)
 
 
 
@@ -58,29 +59,31 @@ y = np.asarray(encoded_Y)
 X = data # training data X[0] = y[0] # spam, X[1]  = y[1] # spam
 y = y # labels
 
-# from sklearn.model_selection import train_test_split
 
-# X_train, X_test, y_train, y_test = train_test_split(
-#     X, y, test_size=0.33, random_state=42)
+X_train_init, X_test, y_train_init, y_test = train_test_split(
+    X, y, test_size=0.33, random_state=42)
+
+X_train, X_val, y_train, y_val = train_test_split(
+    X_train_init, y_train_init, test_size=0.33, random_state=42)
 
 #print(X.shape)
-indices = np.arange(X.shape[0])
-#print(indices)
-np.random.shuffle(indices)
-#print(indices)
+# indices = np.arange(X.shape[0])
+# #print(indices)
+# np.random.shuffle(indices)
+# #print(indices)
 
-X = X[indices]
-y = y[indices]
+# X = X[indices]
+# y = y[indices]
 
-num_samples = int(0.33 * X.shape[0])
+# num_samples = int(0.33 * X.shape[0])
 
-X_train = X[:-num_samples] # 67%
-X_test = X[-num_samples:] # 33%
-y_train = y[:-num_samples] # 67%
-y_test = y[-num_samples:] # 33%
+# X_train = X[:-num_samples] # 67%
+# X_test = X[-num_samples:] # 33%
+# y_train = y[:-num_samples] # 67%
+# y_test = y[-num_samples:] # 33%
 
-#y_val = y[:-num_samples] # 67%
-#y_val = y[-num_samples:] # 33%
+# #y_val = y[:-num_samples] # 67%
+# #y_val = y[-num_samples:] # 33%
 
 
 clf = svm.SVC()
@@ -90,5 +93,16 @@ clf = svm.SVC()
 clf.fit(X_train, y_train)
 clf_score = clf.score(X_test, y_test)
 print(clf_score)
+
+scores = cross_val_score(clf, X_val, y_val, scoring='accuracy', cv=20)
+
+print(scores)
+print("average", "%.4f" %scores.mean())
+print("std", "%.4f" %scores.std())
+print("range", "%.4f" %scores.min(), "%.4f" %scores.max())
+
+
+
+
 
 
